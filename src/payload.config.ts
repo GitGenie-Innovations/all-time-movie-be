@@ -7,6 +7,9 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 
 import Users from './collections/Users'
+import Halls from './collections/Halls'
+import Movies from './collections/Movies'
+import ShowTimes from './collections/ShowTimes'
 
 export default buildConfig({
   admin: {
@@ -14,7 +17,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users],
+  collections: [Users,Halls,Movies,ShowTimes],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
