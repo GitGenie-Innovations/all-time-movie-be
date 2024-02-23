@@ -4,6 +4,7 @@ const ShowTimes: CollectionConfig = {
   slug: "showtimes",
   access: {
     create: () => true,
+    read: () => true,
   },
   admin: {
     useAsTitle: "email",

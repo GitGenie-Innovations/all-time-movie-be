@@ -4,6 +4,7 @@ const Movies: CollectionConfig = {
   slug: "movies",
   access: {
     create: () => true,
+    read: () => true,
   },
   admin: {
     useAsTitle: "name",
