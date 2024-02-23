@@ -25,6 +25,17 @@ const Movies: CollectionConfig = {
       type: "text",
       required: false,
     },
+    {
+      name: "alias",
+      type: "array",
+      required: false,
+      fields: [
+        {
+          name: "aliasName",
+          type: "text",
+        },
+      ],
+    },
   ],
 };
 

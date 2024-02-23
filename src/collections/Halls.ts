@@ -25,11 +25,6 @@ const Halls: CollectionConfig = {
       type: "text",
       required: false,
     },
-    {
-      name: "alias",
-      type: "text",
-      required: false,
-    },
   ],
 };
 
