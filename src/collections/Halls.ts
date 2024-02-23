@@ -1,32 +1,36 @@
-import create from 'payload/dist/collections/operations/create'
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from "payload/types";
 
 const Halls: CollectionConfig = {
-    slug: 'halls',
-    access: {
-        create: () => true,
-        read: ()=> true,
+  slug: "halls",
+  access: {
+    create: () => true,
+    read: () => true,
+  },
+  admin: {
+    useAsTitle: "email",
+  },
+  fields: [
+    {
+      name: "name",
+      required: true,
+      type: "text",
     },
-    admin: {
-        useAsTitle: 'email',
+    {
+      name: "location",
+      required: false,
+      type: "text",
     },
-    fields: [
-        {
-            name: 'name',
-            required: true,
-            type: 'text',
-        },
-        {
-            name: 'location',
-            required: false,
-            type: 'text',
-        },
-        {
-            name: 'featuredImage',
-            type: 'text',
-            required: false,
-        },
-    ]
-}
+    {
+      name: "featuredImage",
+      type: "text",
+      required: false,
+    },
+    {
+      name: "alias",
+      type: "text",
+      required: false,
+    },
+  ],
+};
 
-export default Halls
+export default Halls;
