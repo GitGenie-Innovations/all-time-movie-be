@@ -7,7 +7,7 @@ const Halls: CollectionConfig = {
     read: () => true,
   },
   admin: {
-    useAsTitle: "email",
+    useAsTitle: "name",
   },
   fields: [
     {

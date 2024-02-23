@@ -6,7 +6,7 @@ const Movies: CollectionConfig = {
     create: () => true,
   },
   admin: {
-    useAsTitle: "email",
+    useAsTitle: "name",
   },
   fields: [
     {
