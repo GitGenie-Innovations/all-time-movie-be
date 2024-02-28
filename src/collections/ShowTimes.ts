@@ -115,7 +115,38 @@ const ShowTimes: CollectionConfig = {
         }
       },
     },
+    {
+      path: "/now-showing",
+      method: "get",
+      handler: async (req, res) => {
+        try {
+          const now = new Date();
+
+          const nowShowing = await payload.find({
+            collection: "showtimes",
+            where: {
+              startTime: {
+                $lte: now,
+              },
+              endTime: {
+                $gte: now,
+              },
+            },
+            populate: "movieId", // populate the movieId field to get movie details
+          });
+
+          if (!nowShowing || nowShowing.totalDocs === 0) {
+            throw new Error("No movies are currently showing");
+          }
+
+          res.status(200).send({ message: "success", data: nowShowing });
+        } catch (e) {
+          res.status(404).send({ error: e?.message });
+        }
+      },
+    },
   ],
+
 };
 
 export default ShowTimes;
